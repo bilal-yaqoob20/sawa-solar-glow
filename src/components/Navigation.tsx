@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, Phone, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 interface NavigationProps {
   className?: string;
@@ -36,13 +37,13 @@ const Navigation = ({ className }: NavigationProps) => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-smooth"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -73,14 +74,14 @@ const Navigation = ({ className }: NavigationProps) => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card shadow-card rounded-lg mt-2">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-smooth"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-2 border-t">
                 <Button variant="solar" size="sm" className="w-full flex items-center justify-center space-x-2">
