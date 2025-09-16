@@ -1,7 +1,9 @@
-import { Sun, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Sun, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -14,25 +16,35 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-xl">SAWA Trading</span>
-                <span className="text-sm text-background/70">Solar Solutions</span>
+                <span className="text-sm text-background/70">
+                  Solar Solutions
+                </span>
               </div>
             </div>
             <p className="text-background/80 mb-6 max-w-md">
-              Leading provider of solar energy solutions and HVAC systems in Lahore. 
-              Committed to delivering reliable, sustainable energy solutions for homes and businesses.
+              Leading provider of solar energy solutions and HVAC systems in
+              Lahore. Committed to delivering reliable, sustainable energy
+              solutions for homes and businesses.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-background/90">Garhi Shahu, Lahore, Pakistan</span>
+                <span className="text-background/90">
+                  Garhi Shahu, Lahore, Pakistan
+                </span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div
+                className="flex items-center space-x-3"
+                onClick={() => window.open("tel:+92-301-4015189")}
+              >
                 <Phone className="w-5 h-5 text-accent" />
-                <span className="text-background/90">03014015189</span>
+                <span className="text-background/90">+92-301-4015189</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-accent" />
-                <span className="text-background/90">Mon-Sat: 9:00 AM - 6:00 PM</span>
+                <span className="text-background/90">
+                  Mon-Sat: 9:00 AM - 6:00 PM
+                </span>
               </div>
             </div>
           </div>
@@ -41,12 +53,54 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-background/80 hover:text-accent transition-colors">Solar Panels</a></li>
-              <li><a href="#" className="text-background/80 hover:text-accent transition-colors">Solar Inverters</a></li>
-              <li><a href="#" className="text-background/80 hover:text-accent transition-colors">Battery Storage</a></li>
-              <li><a href="#" className="text-background/80 hover:text-accent transition-colors">Installation</a></li>
-              <li><a href="#" className="text-background/80 hover:text-accent transition-colors">Chiller Systems</a></li>
-              <li><a href="#" className="text-background/80 hover:text-accent transition-colors">HVAC Parts</a></li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-background/80 hover:text-accent transition-colors"
+                >
+                  Solar Panels
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-background/80 hover:text-accent transition-colors"
+                >
+                  Solar Inverters
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-background/80 hover:text-accent transition-colors"
+                >
+                  Battery Storage
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-background/80 hover:text-accent transition-colors"
+                >
+                  Installation
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-background/80 hover:text-accent transition-colors"
+                >
+                  Chiller Systems
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-background/80 hover:text-accent transition-colors"
+                >
+                  HVAC Parts
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -66,11 +120,16 @@ const Footer = () => {
 
             <div className="mt-6">
               <h4 className="font-medium mb-3">Get In Touch</h4>
-              <Button 
-                variant="solar" 
-                size="sm" 
+              <Button
+                variant="solar"
+                size="sm"
                 className="w-full"
-                onClick={() => window.open(`https://wa.me/923014015189?text=Hello, I'm interested in your solar solutions!`, '_blank')}
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/923014015189?text=Hello, I'm interested in your solar solutions!`,
+                    "_blank"
+                  )
+                }
               >
                 WhatsApp Inquiry
               </Button>

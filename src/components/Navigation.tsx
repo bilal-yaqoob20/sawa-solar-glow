@@ -19,7 +19,12 @@ const Navigation = ({ className }: NavigationProps) => {
   ];
 
   return (
-    <nav className={cn("sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b", className)}>
+    <nav
+      className={cn(
+        "sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b",
+        className
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -28,8 +33,12 @@ const Navigation = ({ className }: NavigationProps) => {
               <Sun className="w-6 h-6 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-foreground">SAWA Trading</span>
-              <span className="text-xs text-muted-foreground">Solar Solutions</span>
+              <span className="font-bold text-xl text-foreground">
+                SAWA Trading
+              </span>
+              <span className="text-xs text-muted-foreground">
+                Solar Solutions
+              </span>
             </div>
           </div>
 
@@ -50,9 +59,14 @@ const Navigation = ({ className }: NavigationProps) => {
 
           {/* Contact Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="solar" size="sm" className="flex items-center space-x-2">
+            <Button
+              variant="solar"
+              size="sm"
+              className="flex items-center space-x-2"
+              onClick={() => window.open("tel:+92-301-4015189")}
+            >
               <Phone className="w-4 h-4" />
-              <span>03014015189</span>
+              <span>+92-301-40151899</span>
             </Button>
           </div>
 
@@ -64,7 +78,11 @@ const Navigation = ({ className }: NavigationProps) => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -84,9 +102,14 @@ const Navigation = ({ className }: NavigationProps) => {
                 </Link>
               ))}
               <div className="pt-2 border-t">
-                <Button variant="solar" size="sm" className="w-full flex items-center justify-center space-x-2">
+                <Button
+                  variant="solar"
+                  size="sm"
+                  className="w-full flex items-center justify-center space-x-2"
+                  onClick={() => window.open("tel:+92-301-4015189")}
+                >
                   <Phone className="w-4 h-4" />
-                  <span>03014015189</span>
+                  <span>+92-301-4015189</span>
                 </Button>
               </div>
             </div>

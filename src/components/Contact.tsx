@@ -12,42 +12,43 @@ const Contact = () => {
     name: "",
     phone: "",
     email: "",
-    message: ""
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleWhatsAppInquiry = () => {
     const { name, phone, email, message } = formData;
-    
+
     if (!name || !phone || !message) {
       toast({
         title: "Missing Information",
         description: "Please fill in name, phone, and message fields.",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
 
-    const whatsappMessage = `Hello SAWA Trading!
+    const whatsappMessage =
+      `Hello SAWA Trading!\n\n` +
+      `*New Inquiry:*\n` +
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      (email ? `Email: ${email}\n` : "") +
+      `\nMessage: ${message}`;
 
-*New Inquiry:*
-Name: ${name}
-Phone: ${phone}
-${email ? `Email: ${email}` : ''}
+    const whatsappUrl = `https://wa.me/923014015189?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+    window.open(whatsappUrl, "_blank");
 
-Message: ${message}
-
-I'm interested in your solar/HVAC solutions. Please contact me for more information.`;
-
-    const whatsappUrl = `https://wa.me/923014015189?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(whatsappUrl, '_blank');
-    
     toast({
       title: "Redirecting to WhatsApp",
       description: "Opening WhatsApp with your inquiry message.",
@@ -61,27 +62,27 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
     {
       icon: Phone,
       title: "Phone",
-      details: "03014015189",
-      description: "Call us for immediate assistance"
+      details: "+92-301-4015189",
+      description: "Call us for immediate assistance",
     },
     {
       icon: MapPin,
       title: "Location",
       details: "Garhi Shahu, Lahore",
-      description: "Visit our office"
+      description: "Visit our office",
     },
     {
       icon: Clock,
       title: "Business Hours",
       details: "Mon-Sat: 9 AM - 6 PM",
-      description: "Sunday: By appointment"
+      description: "Sunday: By appointment",
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      details: "03014015189",
-      description: "Quick response guaranteed"
-    }
+      details: "+92-301-4015189",
+      description: "Quick response guaranteed",
+    },
   ];
 
   return (
@@ -93,12 +94,11 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
             📞 Get In Touch
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-foreground">Ready to </span>
-            <span className="bg-gradient-solar bg-clip-text text-transparent">Go Solar?</span>
+            <span className="text-foreground">Ready to Go Solar?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Contact us today for a free consultation and custom quote. Our team is ready 
-            to help you make the switch to clean, reliable energy.
+            Contact us today for a free consultation and custom quote. Our team
+            is ready to help you make the switch to clean, reliable energy.
           </p>
         </div>
 
@@ -111,13 +111,16 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
                 <span>Send Us An Inquiry</span>
               </CardTitle>
               <p className="text-muted-foreground">
-                Fill out the form below and we'll send your message directly to our WhatsApp for quick response.
+                Fill out the form below and we'll send your message directly to
+                our WhatsApp for quick response.
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-foreground">Name *</label>
+                  <label className="text-sm font-medium text-foreground">
+                    Name *
+                  </label>
                   <Input
                     name="name"
                     value={formData.name}
@@ -127,7 +130,9 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground">Phone *</label>
+                  <label className="text-sm font-medium text-foreground">
+                    Phone *
+                  </label>
                   <Input
                     name="phone"
                     value={formData.phone}
@@ -137,9 +142,11 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label className="text-sm font-medium text-foreground">Email</label>
+                <label className="text-sm font-medium text-foreground">
+                  Email
+                </label>
                 <Input
                   name="email"
                   type="email"
@@ -149,9 +156,11 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
                   className="mt-1"
                 />
               </div>
-              
+
               <div>
-                <label className="text-sm font-medium text-foreground">Message *</label>
+                <label className="text-sm font-medium text-foreground">
+                  Message *
+                </label>
                 <Textarea
                   name="message"
                   value={formData.message}
@@ -161,19 +170,20 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
                   className="mt-1"
                 />
               </div>
-              
-              <Button 
+
+              <Button
                 onClick={handleWhatsAppInquiry}
-                variant="solar" 
-                size="lg" 
+                variant="solar"
+                size="lg"
                 className="w-full hover-lift flex items-center space-x-2"
               >
                 <MessageCircle className="w-5 h-5" />
                 <span>Send WhatsApp Inquiry</span>
               </Button>
-              
+
               <p className="text-xs text-muted-foreground text-center">
-                * Required fields. Your inquiry will be sent directly to our WhatsApp for immediate attention.
+                * Required fields. Your inquiry will be sent directly to our
+                WhatsApp for immediate attention.
               </p>
             </CardContent>
           </Card>
@@ -181,8 +191,8 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
           {/* Contact Information */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="hover-lift bg-gradient-card border-border/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -193,9 +203,13 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">{info.title}</h3>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {info.title}
+                    </h3>
                     <p className="text-primary font-medium">{info.details}</p>
-                    <p className="text-sm text-muted-foreground">{info.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {info.description}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -203,21 +217,26 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
 
             {/* Quick Actions */}
             <div className="space-y-4 pt-6">
-              <Button 
-                variant="solar" 
-                size="lg" 
+              <Button
+                variant="solar"
+                size="lg"
                 className="w-full hover-lift"
-                onClick={() => window.open('tel:+923014015189')}
+                onClick={() => window.open("tel:+92-301-4015189")}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now: 03014015189
+                Call Now: +92-301-4015189
               </Button>
-              
-              <Button 
-                variant="energy" 
-                size="lg" 
+
+              <Button
+                variant="energy"
+                size="lg"
                 className="w-full hover-lift"
-                onClick={() => window.open('https://wa.me/923014015189?text=Hello, I need information about your solar solutions!', '_blank')}
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/923014015189?text=Hello, I need information about your solar solutions!",
+                    "_blank"
+                  )
+                }
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp Direct
@@ -227,7 +246,9 @@ I'm interested in your solar/HVAC solutions. Please contact me for more informat
             {/* Map Placeholder */}
             <Card className="hover-lift bg-gradient-card border-border/50">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-4 text-foreground">Visit Our Office</h3>
+                <h3 className="text-lg font-semibold mb-4 text-foreground">
+                  Visit Our Office
+                </h3>
                 <div className="bg-muted rounded-lg h-48 flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
