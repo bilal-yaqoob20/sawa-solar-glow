@@ -2,41 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SAWA Trading Solar Energy Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Solar Energy Theme */
+    --background: 210 40% 98%;
+    --foreground: 210 24% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 24% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 24% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Solar Blue Primary */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Energy Green Secondary */ 
+    --secondary: 142 85% 45%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Solar Gold Accent */
+    --accent: 45 100% 55%;
+    --accent-foreground: 210 24% 16%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 16% 46%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 31% 91%;
+    --input: 210 31% 91%;
+    --ring: 210 100% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Solar Energy Gradients */
+    --gradient-solar: linear-gradient(135deg, hsl(210 100% 45%), hsl(142 85% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 45%) 0%, hsl(210 100% 60%) 50%, hsl(45 100% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    
+    /* Professional Shadows */
+    --shadow-solar: 0 10px 40px -10px hsl(210 100% 45% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(210 24% 16% / 0.1);
+    --shadow-glow: 0 0 30px hsl(45 100% 55% / 0.4);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +73,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark Mode - Solar Night Theme */
+    --background: 210 24% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 210 24% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 210 24% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Bright Solar Blue for Dark Mode */
+    --primary: 210 100% 60%;
+    --primary-foreground: 210 24% 8%;
+    --primary-glow: 210 100% 70%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Vibrant Green for Dark Mode */
+    --secondary: 142 85% 55%;
+    --secondary-foreground: 210 24% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Bright Solar Gold */
+    --accent: 45 100% 65%;
+    --accent-foreground: 210 24% 8%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 210 24% 12%;
+    --muted-foreground: 210 16% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 24% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 210 24% 15%;
+    --input: 210 24% 15%;
+    --ring: 210 100% 60%;
+
+    /* Dark Mode Gradients */
+    --gradient-solar: linear-gradient(135deg, hsl(210 100% 60%), hsl(142 85% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 60%) 0%, hsl(210 100% 70%) 50%, hsl(45 100% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(210 24% 10%), hsl(210 24% 12%));
+    
+    /* Dark Mode Shadows */
+    --shadow-solar: 0 10px 40px -10px hsl(210 100% 60% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(210 24% 4% / 0.3);
+    --shadow-glow: 0 0 30px hsl(45 100% 65% / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -102,4 +134,80 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Solar Energy Utility Classes */
+@layer utilities {
+  /* Gradient Backgrounds */
+  .bg-gradient-solar {
+    background: var(--gradient-solar);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Solar Shadows */
+  .shadow-solar {
+    box-shadow: var(--shadow-solar);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Solar Energy Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-solar-spin {
+    animation: solar-spin 20s linear infinite;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-smooth hover:transform hover:-translate-y-2 hover:shadow-solar;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-glow;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { filter: brightness(1) drop-shadow(0 0 5px hsl(var(--accent) / 0.5)); }
+  to { filter: brightness(1.2) drop-shadow(0 0 20px hsl(var(--accent) / 0.8)); }
+}
+
+@keyframes solar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

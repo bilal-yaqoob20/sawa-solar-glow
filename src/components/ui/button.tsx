@@ -15,6 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        solar: "bg-gradient-solar text-primary-foreground hover:shadow-solar transition-smooth hover:scale-105",
+        energy: "bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:shadow-glow",
+        outline_solar: "border-2 border-primary text-primary bg-background hover:bg-primary hover:text-primary-foreground hover:shadow-solar",
       },
       size: {
         default: "h-10 px-4 py-2",
