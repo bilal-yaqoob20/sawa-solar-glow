@@ -57,9 +57,12 @@ const Hero = () => {
                 Transform your energy needs with our comprehensive solar
                 solutions. From residential installations to commercial HVAC
                 systems, we deliver reliable, sustainable power for Pakistan's
-                growing energy demands. Deals in all type of solar
-                panels(Canadian, JA, Jinko, Trina, Osda, Tongwei, Sonova, and
-                LONGi) and inverters(SOFAR, Huawei, SOLIS, and Sungrow).
+                growing energy demands. Deals in all type of solar panels (
+                <strong>
+                  Canadian, JA, Jinko, Trina, Osda, Tongwei, Sonova, and LONGi
+                </strong>
+                ) and inverters (
+                <strong>SOFAR, Huawei, SOLIS, and Sungrow</strong>).
               </p>
             </div>
 
