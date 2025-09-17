@@ -13,7 +13,7 @@ const Services = () => {
       icon: Sun,
       title: "Solar Panels",
       description:
-        "High-efficiency solar panels from leading brands like Canadian Solar, JA Solar, Jinko Solar, and LONGi.",
+        "High-efficiency solar panels from leading brands like Canadian Solar, JA Solar, Jinko Solar, Trina, Osda, Tongwei, Sonova, and LONGi.",
       image: solarPanelsImg,
       features: [
         "25-year warranty",
@@ -157,7 +157,7 @@ const Services = () => {
                 className="hover-lift"
                 onClick={() => navigate("/contact")}
               >
-                Get Free Quote
+                Send Inquiry
               </Button>
               <Button
                 variant="outline"
