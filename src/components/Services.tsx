@@ -1,14 +1,37 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Sun, Battery, Zap, Wrench, Snowflake, Settings } from "lucide-react";
+import {
+  Sun,
+  Battery,
+  Zap,
+  Wrench,
+  Snowflake,
+  Settings,
+  ExternalLink,
+} from "lucide-react";
 import solarPanelsImg from "@/assets/solar-panels.jpg";
 import inverterImg from "@/assets/inverter.jpg";
 import batteryImg from "@/assets/battery.jpg";
 import chillerImg from "@/assets/chiller.jpg";
+import emsImg from "@/assets/ems.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
   const services = [
+    {
+      icon: Settings,
+      title: "EMS Muscle Sculpt Machine",
+      description:
+        "NEO HI-EMT Slimming Loss Weight EMS Body Stimulator 6500W with One Handle.",
+      image: emsImg,
+      features: [
+        "6500W Power",
+        "One Handle",
+        "Body Slimming & Toning",
+        "Professional EMS Technology",
+      ],
+      buyLink: "https://s.click.aliexpress.com/e/_c3Bq5g0R",
+    },
     {
       icon: Sun,
       title: "Solar Panels",
@@ -134,6 +157,22 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+                {service.buyLink && (
+                  <Button
+                    asChild
+                    variant="solar"
+                    size="lg"
+                    className="w-full mt-2"
+                  >
+                    <a
+                      href={service.buyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Buy Now <ExternalLink />
+                    </a>
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
